@@ -2,12 +2,13 @@
 import { logout } from "@/services/userservices";
 import Usercontext from "@/usecontext/usercontext";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 
 export default function CustomNavBar(){
     const context = useContext(Usercontext);
+   const path= usePathname();
     const router = useRouter();
 
    async function dologout(){
@@ -35,10 +36,10 @@ export default function CustomNavBar(){
                 <ul className='flex space-x-5 mr-2'>
                     {context.user && (
                         <>
-                        <li>
-                             <Link href='/addtask'>Add task</Link>
+                        <li className={path==='/addtask' ? 'bg-slate-100 text-slate-900 p-2 max-sm:text-sm rounded-lg' : 'hover:bg-slate-100 hover:text-slate-900 p-2 max-sm:text-sm rounded-lg' }>
+                             <Link  href='/addtask'>Add task</Link>
                         </li>
-                        <li>
+                        <li className={path==='/showtask' ? 'bg-slate-100 text-slate-900 p-2 max-sm:text-sm rounded-lg' : 'hover:bg-slate-100 hover:text-slate-900 p-2 max-sm:text-sm rounded-lg' }>
                             <Link href='/showtask'>Show Task</Link>
                          </li> 
                         </>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaPlusCircle, FaTasks, FaCheckCircle, FaTrashAlt } from 'react-icons/fa';
 
 export default function TaskManagerOverview() {
@@ -52,7 +53,7 @@ export default function TaskManagerOverview() {
 
       <footer className="w-full py-6 flex justify-center">
         <button className="bg-blue-600 px-6 py-3 rounded-full text-white font-bold hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-          Get Started Now
+         <Link href={'/addtask'}>Get Started Now </Link> 
         </button>
       </footer>
     </div>

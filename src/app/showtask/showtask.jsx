@@ -74,7 +74,7 @@ const Showtask = () => {
     // }
   return (
     <>
-    <div className='container grid grid-cols-12 mt-3 h-screen'>
+    <div className='container grid grid-cols-12 mt-3 min-h-screen'>
        
         <div className='col-span-8 col-start-3 max-sm:col-span-10 max-sm:col-start-2'>
             <div className='text-center'>

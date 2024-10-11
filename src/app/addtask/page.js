@@ -45,7 +45,7 @@ export default function AddTask(){
     return(
         <>
         <div className="text-black  grid grid-cols-12 bg-gradient-to-r from-blue-300 to-blue-500 justify-center h-screen">
-            <div className="col-span-6 col-start-4 p-5 ">
+            <div className="col-span-6 col-start-4 p-5 max-sm:col-start-2 max-sm:col-span-10">
                 <div className="flex justify-center">
                     <Image src={formimage} alt="image for form" width={211} />
                 </div>
@@ -67,7 +67,7 @@ export default function AddTask(){
                         <label htmlFor='task_content' className="block text-sm font-medium">
                             content
                         </label>
-                        <input name="task_content" onChange={(event) => {
+                        <textarea rows={5} name="task_content" onChange={(event) => {
                             settask({
                                 ...task,
                                 content: event.target.value,
